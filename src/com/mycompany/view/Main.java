@@ -15,7 +15,7 @@ public class MainWindow extends JFrame
     final private String[] columnNamesTournoi = { "#", "Nom", "Code" };
     final private String[] columnNamesMatch = { "#", "Tournoi", "Code", "Année", "Type", "Vainqueur", "Finaliste" };
     final private String[] columnNamesEpreuve = { "#", "Tournoi", "Code", "Année", "Type", "Set1", "Set2", "Set3", "Set4", "Set5" };
-    Container pane;
+    private Container pane;
 
     public MainWindow()
     {
@@ -43,8 +43,7 @@ public class MainWindow extends JFrame
         tabbedPane.addTab("Tournois", tournoiView);
         tabbedPane.addTab("Matchs", matchView);
         tabbedPane.addTab("Épreuves", epreuveView);
-
-        pane.add(tabbedPane, BorderLayout.CENTER);
+        pane.add(tabbedPane);
 
         pack();
         setVisible(true);

@@ -6,6 +6,7 @@ import com.mycompany.beans.Filtre;
 import com.mycompany.beans.Match;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.List;
 
 public abstract class BaseClassExtended<T> extends BaseClassView
@@ -13,10 +14,21 @@ public abstract class BaseClassExtended<T> extends BaseClassView
     protected JComboBox filtreSexe;
     protected JComboBox filtreAnnee;
     protected JComboBox filtreTournoi;
+    protected JPanel menu;
 
     public BaseClassExtended(String[] columnNames)
     {
         super(columnNames);
+        menu = new JPanel();
+        String[] sexes = {"Les Deux", "Homme", "Femme"};
+        filtreSexe = new JComboBox(sexes);
+        filtreSexe.setPreferredSize(new Dimension(fieldWidth+20, fieldHeight) );
+        String[] annees = {"Toutes", };
+        filtreAnnee = new JComboBox(annees);
+        filtreAnnee.setPreferredSize(new Dimension(fieldWidth+20, fieldHeight) );
+        String[] tournois = {"Tous", };
+        filtreTournoi = new JComboBox(tournois);
+        filtreTournoi.setPreferredSize(new Dimension(fieldWidth+20, fieldHeight) );
     }
 
     public Filtre getFiltre()
